@@ -1,0 +1,107 @@
+
+1.Calculate the sum of digits of the number given by user
+Eg: 456=4+5+6=15
+
+Algorithm
+1.declare var num,sum,rem
+2.initialize sum=0
+3.while condition for num greater than 0.
+4.do num mod 10 store it in a rem 
+5.sum is equal to sum plus rem
+6.num divided by 10
+7.same process coninues till cond becomes false
+
+1.Pseudocode:
+
+declare num
+accept num
+initialize sum = 0;
+while num!=0
+rem = num mod 10
+sum +=rem
+num= num div 10
+print sum
+
+
+
+Algorithm
+1.declare string shape
+2.if entered shape is rectangle 
+  a)declare lenth,width
+  b)declare res to store the calculated data
+  c)to calculate area multiply len and width
+  d)Print result
+3.if entered shape is square
+  a)declare lenth
+  b)declare res to store the calculated data
+  c)to calculate area multiply len twice
+  d)Print result
+4.if entered shape is circle
+  a)declare radius
+  b)declare res to store the calculated data
+  c)to calculate area a constant valve pi and radius twice that is the formula
+  d)Print result
+
+Pseudocode:
+
+2.declare string shape
+if shape ==rectangle
+     declare var len
+     accept value len
+
+    declare var wid
+    accept value wid
+
+    declare var res
+    calculate res=len * wid
+    print res
+
+else if  shape ==square
+     declare var len
+     accept value len
+
+     declare var res
+     calculate res= len*len
+     print res
+
+else
+     declare var rad
+     accept value rad
+
+     res = 3.142*radius*radius
+     print res
+
+
+Algorithm
+1.declare var total,mark1,mark2,mark3,mark4,mark5
+2.initialize total
+3.calculate toatl by summing all the marks
+4.calculate average by dividing total by no of marks
+5. If the average is between 75-90 it prints excellent
+6. If the average is between 60-75 it prints good
+7.If the average is between 45-50 it prints pass
+8.else condition it prints fail.
+
+
+Pseudocode:
+
+declare total,mark1,mark2,mark3,mark4,mark5,no. of. usermarks
+initialize  total = 0
+initialize no. of. usermarks = 5
+
+accept values for mark1,mark2,mark3,mark4,mark5
+total =mark1+mark2+mark3+mark4+mark5
+
+average= total/no. of. usermarks
+
+if(75>average<90)
+print "excellent"
+
+else if(60>average<75)
+print good
+
+else if(45>average<60)
+print pass
+
+else
+print fail
