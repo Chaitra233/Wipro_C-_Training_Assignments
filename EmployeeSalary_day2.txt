@@ -1,0 +1,44 @@
+using System;
+
+public class Employee
+{
+    public static void Main()
+    {
+        Console.WriteLine("Employee ID ");
+        int eId = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Employee Name ");
+        string eName = Console.ReadLine();
+
+        Console.WriteLine("Basic Salary: ");
+        decimal ebasicSalary = Convert.ToDecimal(Console.ReadLine());
+
+        Console.WriteLine("Is Contract Employee? ");
+        bool isContractEmployee = Convert.ToBoolean(Console.ReadLine());
+
+        Console.WriteLine("Department Number ");
+        int deptNo = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Email ID ");
+        string email = Console.ReadLine();
+        
+        decimal hra = 0.15m * ebasicSalary;
+        decimal ma = 0.1m * ebasicSalary;
+        decimal ta = 0.15m * ebasicSalary;
+        // Console.WriteLine("ta"+ta);
+        decimal totalSalary = ta + ebasicSalary + hra + ma ;
+        
+        
+        Console.WriteLine("Employee ID: "+eId);
+        Console.WriteLine("Employee Name: "+ eName);
+        Console.WriteLine("Is Contract Employee" + isContractEmployee);
+        Console.WriteLine("Department Number:" + deptNo);
+        Console.WriteLine("\nEmail ID: " + email);
+        Console.WriteLine("Basic Salary: "+ebasicSalary);
+        Console.WriteLine("HRA: "+ hra);
+        Console.WriteLine("MA:" + ma);
+        Console.WriteLine("TA: "+ ma);
+        Console.WriteLine("Total Salary:" + totalSalary );
+        
+    }
+}

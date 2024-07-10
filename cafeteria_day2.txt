@@ -1,0 +1,47 @@
+using System;
+ 
+namespace PizzaBilling
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const int pizzaPrice = 300;
+            const int puffPrice = 50;
+            const int pepsiPrice = 130;
+ 
+            Console.WriteLine("Welcome to AMB Mall Multiplex Cafeteria!");
+ 
+            // Read number of items
+            Console.Write("Enter the number of pizzas: ");
+            int numPizzas = int.Parse(Console.ReadLine());
+ 
+            Console.Write("Enter the number of puffs: ");
+            int numPuffs = int.Parse(Console.ReadLine());
+ 
+            Console.Write("Enter the number of pepsis: ");
+            int numPepsis = int.Parse(Console.ReadLine());
+ 
+            // Calculate total costs
+            int totalPizzaCost = numPizzas * pizzaPrice;
+            int totalPuffCost = numPuffs * puffPrice;
+            int totalPepsiCost = numPepsis * pepsiPrice;
+            int grandTotal = totalPizzaCost + totalPuffCost + totalPepsiCost;
+ 
+            // Calculate GST and CESS
+            double gstAmount = grandTotal * 0.09;
+            double cessAmount = grandTotal * 0.09;
+ 
+            // Display bill details
+            Console.WriteLine("\nBill Details:");
+            Console.WriteLine($"Total cost of pizzas: Rs.{totalPizzaCost}");
+            Console.WriteLine($"Total cost of puffs: Rs.{totalPuffCost}");
+            Console.WriteLine($"Total cost of pepsis: Rs.{totalPepsiCost}");
+            Console.WriteLine($"Grand Total: Rs.{grandTotal}");
+            Console.WriteLine($"GST Amount (9%): Rs.{gstAmount:F2}");
+            Console.WriteLine($"CESS Amount (9%): Rs.{cessAmount:F2}");
+            Console.WriteLine($"Final Total: Rs.{grandTotal + gstAmount + cessAmount:F2}");
+        }
+    }
+}
+
