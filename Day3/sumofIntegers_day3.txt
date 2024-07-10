@@ -1,0 +1,33 @@
+using System;
+
+namespace SumofMaxIntegers
+{
+    class Program
+    {
+        static void Main()
+        {
+            int maxIntvalue = int.MaxValue;
+            int maxIntvalue2 = int.MaxValue;
+
+            Console.WriteLine($"Max Int Value 1: {maxIntvalue}");
+            Console.WriteLine($"Max Int Value 2: {maxIntvalue2}");
+
+            try
+            {
+                checked
+                {
+                    int result = maxIntvalue + maxIntvalue2;
+                    Console.WriteLine($"Sum: {result}");
+                }
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Overflow occurred! Switching to a larger data type...");
+            }
+
+            // Example of handling with a larger data type
+            long largerResult = (long)maxIntvalue + maxIntvalue2;
+            Console.WriteLine($"Sum using long: {largerResult}");
+        }
+    }
+}

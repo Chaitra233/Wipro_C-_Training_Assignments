@@ -1,0 +1,84 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+namespace ApexMedicalClinic
+{
+    class Patient
+    {
+        // Define variables to store patient details
+        public int PatientID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public bool IsInsured { get; set; }
+        public string ContactNumber { get; set; }
+        public double Height { get; set; }
+        public double Weight { get; set; }
+        
+        // Additional details can be added as needed
+        public string Address { get; set; }
+        public string MedicalHistory { get; set; }
+
+        // Method to display patient details
+        public void DisplayPatientInfo()
+        {
+            Console.WriteLine("Patient ID: " + PatientID);
+            Console.WriteLine("First Name: " + FirstName);
+            Console.WriteLine("Last Name: " + LastName);
+            Console.WriteLine("Date of Birth: " + DateOfBirth.ToShortDateString());
+            Console.WriteLine("Insured: " + (IsInsured ? "Yes" : "No"));
+            Console.WriteLine("Contact Number: " + ContactNumber);
+            Console.WriteLine("Height: " + Height + " cm");
+            Console.WriteLine("Weight: " + Weight + " kg");
+            Console.WriteLine("Address: " + Address);
+            Console.WriteLine("Medical History: " + MedicalHistory);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create a new patient object
+            Patient patient = new Patient();
+
+            // Input patient details
+            Console.Write("Enter Patient ID: ");
+            patient.PatientID = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter First Name: ");
+            patient.FirstName = Console.ReadLine();
+
+            Console.Write("Enter Last Name: ");
+            patient.LastName = Console.ReadLine();
+
+            Console.Write("Enter Date of Birth (yyyy-mm-dd): ");
+            patient.DateOfBirth = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Is the patient insured? (true/false): ");
+            patient.IsInsured = Convert.ToBoolean(Console.ReadLine());
+
+            Console.Write("Enter Contact Number: ");
+            patient.ContactNumber = Console.ReadLine();
+
+            Console.Write("Enter Height (in cm): ");
+            patient.Height = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Weight (in kg): ");
+            patient.Weight = Convert.ToDouble(Console.ReadLine());
+
+            // Additional details
+            Console.Write("Enter Address: ");
+            patient.Address = Console.ReadLine();
+
+            Console.Write("Enter Medical History: ");
+            patient.MedicalHistory = Console.ReadLine();
+
+            // Display patient details
+            Console.WriteLine("\nPatient Information:");
+            patient.DisplayPatientInfo();
+        }
+    }
+}

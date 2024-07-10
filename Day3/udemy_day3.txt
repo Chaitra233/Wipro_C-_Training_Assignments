@@ -1,0 +1,73 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+class Subscriber
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public DateTime RegistrationDate { get; set; }
+    public double CourseFee { get; private set; }
+    public double FinalFee { get; private set; }
+
+    public Subscriber()
+    {
+        CourseFee = 25000;
+    }
+
+    public void CalculateFinalFee()
+    {
+        if (RegistrationDate < new DateTime(2024, 6, 10))
+        {
+            FinalFee = CourseFee * 0.90; // 10% discount if registered before 10th June
+        }
+        else if (RegistrationDate < new DateTime(2024, 6, 15))
+        {
+            FinalFee = CourseFee * 0.85; // 15% discount if registered before 15th June
+        }
+        else if (RegistrationDate <= new DateTime(2024, 6, 20))
+        {
+            FinalFee = CourseFee; // No discount if registered before or on 20th June
+        }
+        else
+        {
+            FinalFee = CourseFee * 1.05; // 5% late fee if registered after 20th June
+        }
+    }
+
+    public override string ToString()
+    {
+        return $"Name: {Name}, Email: {Email}, Registration Date: {RegistrationDate.ToShortDateString()}, Final Fee: INR {FinalFee}";
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user for subscriber details
+        Console.WriteLine("Enter subscriber details:");
+        Console.Write("Name: ");
+        string name = Console.ReadLine();
+        Console.Write("Email: ");
+        string email = Console.ReadLine();
+        Console.Write("Registration Date (dd/mm/yyyy): ");
+        DateTime registrationDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+        // Create subscriber object
+        Subscriber subscriber = new Subscriber
+        {
+            Name = name,
+            Email = email,
+            RegistrationDate = registrationDate
+        };
+
+        // Calculate final fee
+        subscriber.CalculateFinalFee();
+
+        // Display subscriber details
+        Console.WriteLine("\nSubscriber Details:");
+        Console.WriteLine(subscriber);
+    }
+}

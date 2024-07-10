@@ -1,0 +1,55 @@
+using System;
+
+namespace ProductInfo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Read product information
+            Console.Write("Enter Product ID: ");
+            string productId = Console.ReadLine();
+
+            Console.Write("Enter Product Name: ");
+            string productName = Console.ReadLine();
+
+            Console.Write("Enter Unit Price: ");
+            double unitPrice = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Quantity: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+
+            // Calculate the total amount
+            double totalAmount = unitPrice * quantity;
+            double discount = 0.0;
+
+            // Apply discounts based on conditions
+            if (totalAmount > 5000)
+            {
+                discount = 0.20;
+            }
+            else if (totalAmount > 3000)
+            {
+                discount = 0.15;
+            }
+            else if (totalAmount > 1000)
+            {
+                discount = 0.10;
+            }
+
+            double discountAmount = totalAmount * discount;
+            double finalAmount = totalAmount - discountAmount;
+
+            // Display the results
+            Console.WriteLine("\nProduct Information:");
+            Console.WriteLine("Product ID: " + productId);
+            Console.WriteLine("Product Name: " + productName);
+            Console.WriteLine("Unit Price: " + unitPrice);
+            Console.WriteLine("Quantity: " + quantity);
+            Console.WriteLine("Total Amount: " + totalAmount);
+            Console.WriteLine("Discount Applied: " + (discount * 100) + "%");
+            Console.WriteLine("Discount Amount: " + discountAmount);
+            Console.WriteLine("Final Amount: " + finalAmount);
+        }
+    }
+}

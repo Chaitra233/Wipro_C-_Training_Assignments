@@ -1,0 +1,47 @@
+using System;
+
+public class Project
+{
+    public static void Main()
+    {
+        DateTime d = new DateTime();
+        d = DateTime.Now;
+        Console.WriteLine("" +d);
+        DateTime afterDate = d.AddDays(10);
+        Console.WriteLine(afterDate);
+        
+    }
+}
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        DateTime d = new DateTime();
+        d = DateTime.Now;
+        Console.WriteLine(d);
+        DateTime afterDate = d.AddDays(10);
+        Console.WriteLine(afterDate);
+        
+         TimeSpan difference = afterDate - d;
+         int noofDays = difference.Days;
+        Console.WriteLine(noofDays);
+    }
+}
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        DateTime d = new DateTime();
+        d = new DateTime(2024, 7, 9, 11, 28, 0);
+       
+        // Console.WriteLine(d);
+        string dt = d.ToString("dddd, d MMMM, yyyy  'at'  hh:mm tt");
+        Console.WriteLine(dt);
+    }
+}
