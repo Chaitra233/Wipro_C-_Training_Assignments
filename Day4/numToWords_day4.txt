@@ -1,0 +1,36 @@
+using System;
+
+namespace NumberToWords
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a number: ");
+            string input = Console.ReadLine();
+            string output = ConvertNumberToWords(input);
+            Console.WriteLine("Output: " + output);
+        }
+
+        static string ConvertNumberToWords(string number)
+        {
+            string[] words = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            string result = "";
+
+            foreach (char digit in number)
+            {
+                if (char.IsDigit(digit))
+                {
+                    int index = int.Parse(digit.ToString());
+                    result += words[index] + " ";
+                }
+                else
+                {
+                    result += "invalid character ";
+                }
+            }
+
+            return result.Trim();
+        }
+    }
+}
