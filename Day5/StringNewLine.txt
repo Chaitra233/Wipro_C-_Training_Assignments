@@ -1,0 +1,18 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "Welcome to C# Programming";
+
+        // Split the input string into words
+        string[] words = input.Split(' ');
+
+        // Print each word on a new line
+        foreach (string word in words)
+        {
+            Console.WriteLine(word);
+        }
+    }
+}

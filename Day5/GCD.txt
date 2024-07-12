@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 12345;
+
+        // Convert number to string to access each digit
+        string numberStr = number.ToString();
+
+        // Variable to store the sum of alternate digits
+        int sumAlternateDigits = 0;
+
+        // Iterate through the digits
+        for (int i = 0; i < numberStr.Length; i++)
+        {
+            // Check if the index i is odd (1st, 3rd, 5th digit)
+            if (i % 2 == 0)
+            {
+                // Add the digit to sumAlternateDigits
+                sumAlternateDigits += int.Parse(numberStr[i].ToString());
+            }
+        }
+
+        // Print the result
+        Console.WriteLine($"Sum of alternate digits: {sumAlternateDigits}");
+    }
+}

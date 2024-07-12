@@ -1,0 +1,35 @@
+
+﻿using System;
+
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+
+        static int  Factorial(int n)
+        {
+            int fact = 1;
+
+            for(int i = 1; i <=n; i++)
+            {
+                fact = fact * i;
+            }
+
+            return fact;
+        }
+ 
+        static void Main()
+
+       {
+
+        Console.WriteLine("Enter the number");
+
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        long factorial = Factorial(number);
+
+        Console.WriteLine($"The factorial of number {number} is {factorial} ");
+        }
+    }
+}
