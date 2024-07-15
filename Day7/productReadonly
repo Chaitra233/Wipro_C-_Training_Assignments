@@ -1,0 +1,52 @@
+using System;
+
+public class Product
+{
+
+    public int ProductId { get; }
+    public string ProductName { get; set; }
+    public decimal UnitPrice { get; set; }
+    public int Quantity { get; set; }
+
+
+    public Product(int productId)
+    {
+        ProductId = productId;
+        ProductName = "";
+        UnitPrice = 0.0m;
+        Quantity = 0;
+    }
+
+   
+    public void ShowDetails()
+    {
+        Console.WriteLine($"Product Details :: Id: {ProductId}, Name: {ProductName}, Price: {UnitPrice}, Quantity: {Quantity}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+       
+        Product p1 = new Product(1001);
+        p1.ProductName = "Laptop";
+        p1.UnitPrice = 1200.50m;
+        p1.Quantity = 5;
+
+        Product p2 = new Product(1002);
+        p2.ProductName = "Mouse";
+        p2.UnitPrice = 25.75m;
+        p2.Quantity = 20;
+
+
+        p1.ShowDetails();
+        p2.ShowDetails();
+
+       
+        Console.WriteLine($"Product ID of p1: {p1.ProductId}");
+
+        // Wait for user input to close console window
+        Console.ReadLine();
+    }
+}
