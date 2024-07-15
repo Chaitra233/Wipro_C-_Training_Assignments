@@ -1,0 +1,66 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace ConsoleApp13
+{
+    class Customer
+    { 
+        // Auto-Implemented Properties
+        public int CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerCity { get; set; }
+
+        public Customer()
+        {
+                CustomerId = 0; 
+                CustomerName = "";
+                CustomerCity = " ";
+        }
+        public Customer(int cid)
+        {
+            CustomerId = cid;
+        }
+        public Customer(int cid, string name)
+        {
+            CustomerId = cid;
+            CustomerName = name;
+        }
+         public Customer(int cid, string name, string city)
+        {
+            CustomerId = cid;
+            CustomerName = name;
+            CustomerCity = city;
+        }
+        
+          public void ShowDetails()
+        {
+            Console.WriteLine($"Customer Details :: Id : {CustomerId}, Name : {CustomerName}, City : {CustomerCity}");
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Customer customerObj1 = new Customer();
+            Customer customerObj2 = new Customer(9988);
+            Customer customerObj3 = new Customer(7766, "Scott");
+            Customer customerObj4 = new Customer(7766, "Scott","hyd");
+
+            customerObj1.ShowDetails();
+            customerObj2.ShowDetails();
+            customerObj3.ShowDetails();
+            customerObj4.ShowDetails();
+
+            Console.ReadLine(); 
+        }
+    }
+}
