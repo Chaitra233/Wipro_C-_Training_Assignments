@@ -1,0 +1,54 @@
+
+
+using System;
+
+public class PatientDetails
+{
+
+    public int PatientId { get; set; }
+    public string FirstName { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public int Age { get; set; }
+    public string Address { get; set; }
+    public bool HasInsurance { get; set; }
+    public double Weight { get; set; }
+
+
+    public PatientDetails(int patientId, string firstName, DateTime dateOfBirth, int age, string address, bool hasInsurance, double weight)
+    {
+        PatientId = patientId;
+        FirstName = firstName;
+        DateOfBirth = dateOfBirth;
+        Age = age;
+        Address = address;
+        HasInsurance = hasInsurance;
+        Weight = weight;
+    }
+
+
+    public void DisplayDetails()
+    {
+        Console.WriteLine($"Patient Details :: ID: {PatientId}, Name: {FirstName} , " +
+                          $"Date of Birth: {DateOfBirth.ToShortDateString()}, Age: {Age}, " +
+                          $"Address: {Address}, Has Insurance: {HasInsurance}, " +
+                          $" Weight: {Weight} kg");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Creating instances of PatientDetails
+        PatientDetails patient1 = new PatientDetails(1001, "John", new DateTime(1980, 5, 15),30, "123 Main , Hyd", true, 75.2);
+
+        PatientDetails patient2 = new PatientDetails(1002, "Jane", new DateTime(1995, 10, 20),29, "456 Elm St, Chennai", false, 55.0);
+
+
+        patient1.DisplayDetails();
+        patient2.DisplayDetails();
+
+
+        Console.ReadLine();
+    }
+}
