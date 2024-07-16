@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a string:");
+        string input = Console.ReadLine();
+
+        int result = CountWordsWithEqualCharacters(input);
+
+        Console.WriteLine("Output: " + result);
+    }
+
+    static int CountWordsWithEqualCharacters(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            return 0;
+
+        
+        string[] words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+        
+        Dictionary<int, int> wordLengthCounts = new Dictionary<int, int>();
+
+        foreach (string word in words)
+        {
+            int length = word.Length;
+            if (wordLengthCounts.ContainsKey(length))
+                wordLengthCounts[length]++;
+            else
+                wordLengthCounts[length] = 1;
+        }
+
+        
+        int equalCharWordsCount = 0;
+        foreach (var count in wordLengthCounts.Values)
+        {
+            if (count > 1)
+                equalCharWordsCount += count;
+        }
+
+        return equalCharWordsCount;
+    }
+}
