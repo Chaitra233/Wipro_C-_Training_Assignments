@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] ar = { "Books", "Pens", "Charts" };
+
+        // Convert array to comma-separated string
+        string result = ConvertToCsv(ar);
+
+        // Output the result
+        Console.WriteLine($"Output: {result}");
+
+        Console.ReadLine();
+    }
+
+    static string ConvertToCsv(string[] array)
+    {
+        if (array == null || array.Length == 0)
+        {
+            return ""; // Return empty string if array is empty or null
+        }
+
+        string csvString = array[0]; // Start with the first element
+
+        // Append each subsequent element with a comma
+        for (int i = 1; i < array.Length; i++)
+        {
+            csvString += ", " + array[i];
+        }
+
+        return csvString;
+    }
+}
