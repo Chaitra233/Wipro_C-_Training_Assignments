@@ -1,0 +1,42 @@
+
+
+using System;
+
+public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+
+    
+    public Person(string firstName, string lastName, int age)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Age = age;
+    }
+
+    
+    public override string ToString()
+    {
+        return $"Person: {FirstName} {LastName}, Age: {Age}";
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        
+        Person person1 = new Person("John", "Doe", 30);
+        Person person2 = new Person("Jane", "Smith", 25);
+
+        
+        Console.WriteLine(person1.ToString()); 
+        Console.WriteLine(person2);            
+ 
+        string person1Details = $"Details of person1: {person1}";
+        Console.WriteLine(person1Details);     
+        Console.ReadLine();
+    }
+}
